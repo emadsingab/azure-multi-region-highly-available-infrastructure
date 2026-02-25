@@ -62,20 +62,20 @@ Azure NAT Gateways manage secure and highly resilient outbound internet connecti
 **Implementation Steps:**
 
 1. **Navigate to NAT Gateways:** Searched for **NAT gateways** in the Azure Portal and clicked **+ Create**.
-   ![Navigate to NAT Gateways](images/4%20-%20Deploy%20NAT-West%20Gateway.png)
+   ![Navigate to NAT Gateways](images/4%20-%20%20Deploy%20NAT-West%20Gateway.png)
 
 2. **Provision `NAT-West`:**
    - **Basics:** Selected the `RG-lab` resource group, named the gateway `NAT-West`, and deployed it in the `West US` region.
    - **Outbound IP:** Created a new standard static Public IP address named `PIP-NATWest`.
    - **Networking:** Associated the gateway specifically with `vNet-West` and its corresponding `Subnet-West`. Validated and deployed.
-   ![Deploy NAT-West Basics](images/4%20-%20Deploy%20NAT-West%20Gateway1.png)
-   ![NAT-West Networking](images/4%20-%20Deploy%20NAT-West%20Gateway3.png)
+   ![Deploy NAT-West Basics](images/4%20-%20%20Deploy%20NAT-West%20Gateway1.png)
+   ![NAT-West Networking](images/4%20-%20%20Deploy%20NAT-West%20Gateway3.png)
 
 3. **Provision `NAT-East`:**
    - **Basics & IP:** Configured the second gateway named `NAT-East` in the `East US` region within `RG-lab`. Created a new Public IP named `PIP-NATEast`.
    - **Networking:** Associated the gateway securely with `vNet-East` and `Subnet-East`. Clicked **Create** to complete the foundational network phase.
-   ![Deploy NAT-East](images/4%20-%20Deploy%20NAT-East%20Gateway.png)
-   ![NAT-East Validation](images/4%20-%20Deploy%20NAT-East%20Gatewa1.png)
+   ![Deploy NAT-East](images/4%20-%20%20Deploy%20NAT-East%20Gateway.png)
+   ![NAT-East Validation](images/4%20-%20%20Deploy%20NAT-East%20Gatewa1.png)
 
 ---
 *✅ Phase 2 Completed Successfully!*
