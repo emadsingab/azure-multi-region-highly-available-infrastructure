@@ -73,7 +73,7 @@ An Availability Set is a logical grouping capability that ensures VM redundancy 
 ## ✅ Final Verification
 Both `WEST01` and `WestUS02` are successfully joined to the `RG-LAB` resource group, displaying a `Running` status. Both VMs correctly reflect the Public IP address of the `LB-West` frontend, confirming successful load balancer integration.
 
-![VMs Running](images/image_5ee99f.png)
+![VMs Running](images/final-vms.png)
 
 ---
 *✅ Phase 5 Completed Successfully!*
