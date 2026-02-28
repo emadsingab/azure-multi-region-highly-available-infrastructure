@@ -38,7 +38,7 @@ To ensure the global CDN remains functional even if the primary storage region e
 * Configured the priority and weight to establish a proper failover routing methodology across regions.
 
 *(Origin Group Evidence)*
-![Add Secondary Origin](images/add%20second%20oragin%20.jpg)
+![Add Secondary Origin](images/add-second-oragin%20.png)
 
 ---
 *✅ Phase 9 Completed Successfully! Static assets are now globally cached and highly available.*
