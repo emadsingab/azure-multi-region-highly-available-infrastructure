@@ -1,4 +1,4 @@
-# ☁️ Enterprise Multi-Region High-Availability Azure Architecture
+# ☁️ Multi-Region High-Availability Azure Architecture
 
 ## 🎯 Project Overview
 This repository documents the hands-on design, deployment, and validation of an enterprise-grade cloud infrastructure on Microsoft Azure. The project is strictly engineered to eliminate single points of failure, providing global load balancing, secure private networking, and uninterrupted access through automatic failover mechanisms. 
