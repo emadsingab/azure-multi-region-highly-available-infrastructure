@@ -7,7 +7,7 @@ Beyond just high availability, this architecture strongly emphasizes **Cost Opti
 
 ## 🏗️ Architecture Design & Strategy
 
-![Enterprise Architecture Diagram](images/project%20architect.png)
+![Enterprise Architecture Diagram](images/project%20architect1.png)
 
 This infrastructure is built upon core architectural decisions designed to solve specific enterprise challenges:
 
