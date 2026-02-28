@@ -1,7 +1,5 @@
 # ☁️ Enterprise Multi-Region High-Availability Azure Architecture
 
-**Architected and Deployed by:** Emad Elsayed Singab  
-
 ## 🎯 Project Overview
 This repository documents the hands-on design, deployment, and validation of an enterprise-grade cloud infrastructure on Microsoft Azure. The project is strictly engineered to eliminate single points of failure, providing global load balancing, secure private networking, and uninterrupted access through automatic failover mechanisms. 
 
@@ -50,5 +48,6 @@ The project execution is thoroughly documented step-by-step. All configuration d
 ---
 *💡 This repository serves as a practical validation of deploying a fully functional, highly available, cost-optimized, and secure cloud architecture tailored for modern enterprise requirements.*
 ---
-## 🎓 Author
-**Emad Singab**
+## Deployed by:
+**Emad Elsayed Singab**
+
