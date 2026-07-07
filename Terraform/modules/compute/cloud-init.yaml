@@ -1,0 +1,21 @@
+#cloud-config
+# install and configure nginx
+# then create a custom html page
+package_update: true
+packages:
+  - nginx
+
+write_files:
+  - path: /var/www/html/index.html
+    content: |
+      <html>
+        <body>
+          <h1>Azure Multi Region HA</h1>
+          <p>Region: ${region_name}</p>
+          <p>VM Number: ${vm_number}</p>
+        </body>
+      </html>
+
+runcmd:
+  - systemctl enable nginx
+  - systemctl restart nginx
