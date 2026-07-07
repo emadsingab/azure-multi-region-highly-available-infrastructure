@@ -11,11 +11,13 @@ The following diagram illustrates how the components and Terraform modules relat
 ```mermaid
 graph TD
     %% Styling Definitions
-    classDef client fill:#ececff,stroke:#333,stroke-width:2px;
-    classDef global fill:#ffd2d2,stroke:#ff3333,stroke-width:2px;
-    classDef regional fill:#d2ffd2,stroke:#33cc33,stroke-width:2px;
-    classDef secure fill:#ffe6cc,stroke:#ff9900,stroke-width:2px;
-    classDef peering fill:#e6f2ff,stroke:#0066cc,stroke-width:2px,stroke-dasharray: 5 5;
+    classDef client fill:#0277bd,stroke:#01579b,stroke-width:2px,color:#ffffff;
+    classDef global fill:#c62828,stroke:#b71c1c,stroke-width:2px,color:#ffffff;
+    classDef regional fill:#2e7d32,stroke:#1b5e20,stroke-width:2px,color:#ffffff;
+    classDef storage fill:#00695c,stroke:#004d40,stroke-width:2px,color:#ffffff;
+    classDef secure fill:#ef6c00,stroke:#d84315,stroke-width:2px,color:#ffffff;
+    classDef peering fill:#6a1b9a,stroke:#4a148c,stroke-width:2px,color:#ffffff,stroke-dasharray: 5 5;
+    classDef avset fill:#455a64,stroke:#37474f,stroke-width:2px,color:#ffffff;
 
     %% Global Client Traffic
     User[Global Users / Clients]:::client
@@ -23,8 +25,8 @@ graph TD
     User -->|Static Web Assets| FD[Azure Front Door CDN<br>Failover Cache]:::global
 
     %% Global CDN Storage Failover
-    FD -->|Priority 1: Active| StorageWest[(Web Storage: West US<br>mrhadevweststorage01)]:::regional
-    FD -->|Priority 2: Standby| StorageEast[(Web Storage: East US<br>mrhadeveaststorage01)]:::regional
+    FD -->|Priority 1: Active| StorageWest[(Web Storage: West US<br>mrhadevweststorage01)]:::storage
+    FD -->|Priority 2: Standby| StorageEast[(Web Storage: East US<br>mrhadeveaststorage01)]:::storage
     StorageWest -.->|Change Feed + Versioning<br>Object Replication| StorageEast
 
     %% Traffic Manager Regional DNS Resolution
@@ -40,7 +42,7 @@ graph TD
             NATWest[West NAT Gateway]:::secure
             VMWest1[VM 1]:::regional
             VMWest2[VM 2]:::regional
-            VMWest1 & VMWest2 --- AvSetWest[Availability Set<br>Fault: 2, Update: 5]
+            VMWest1 & VMWest2 --- AvSetWest[Availability Set<br>Fault: 2, Update: 5]:::avset
         end
         
         subgraph BastionSubnetWest [Bastion Subnet: 10.10.100.0/26]
@@ -57,7 +59,7 @@ graph TD
             NATEast[East NAT Gateway]:::secure
             VMEast1[VM 1]:::regional
             VMEast2[VM 2]:::regional
-            VMEast1 & VMEast2 --- AvSetEast[Availability Set<br>Fault: 2, Update: 5]
+            VMEast1 & VMEast2 --- AvSetEast[Availability Set<br>Fault: 2, Update: 5]:::avset
         end
     end
 
